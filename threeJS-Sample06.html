@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - loaders - MMD loader</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="main.css">
+		<style>
+			body {
+				background-color: #fff;
+				color: #444;
+			}
+			a {
+				color: #08f;
+			}
+		</style>
+
+
+		<!--  ------- JavaScript ------------ -->
+		<script src="js/three.js"></script>
+
+		<script src="js/libs/mmdparser.min.js"></script>
+		<script src="js/libs/ammo.js"></script>
+		
+		<script src="js/libs/mmdparser.min.js"></script>
+		
+		<script src="js/loaders/TGALoader.js"></script>
+		<script src="js/loaders/MMDLoader.js"></script>  
+		<script src="js/effects/OutlineEffect_forMMD.js"></script> <!-- outline 仮対応：ratio=0固定 -->
+		<script src="js/animation/CCDIKSolver.js"></script>
+		<script src="js/animation/MMDPhysics.js"></script>
+		<script src="js/animation/MMDAnimationHelper_my.js"></script>
+
+		<script src="js/controls/OrbitControls.js"></script>
+
+		<script src="js/libs/stats.min.js"></script>
+		<script src="js/libs/dat.gui.min.js"></script>
+
+
+
+
+
+		
+
+	</head>
+		<style>
+			.dg,.ac {
+				z-index: 101!important;
+			}
+		</style>
+		
+	<body>
+		<div id="info">
+		<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - MMDLoader test<br />
+		<a href="https://github.com/mrdoob/three.js/tree/master/examples/models/mmd#readme" target="_blank" rel="noopener">MMD Assets license</a><br />
+		</div>
+
+        <button type="button" onclick="myTestEdi();">更新</button>
+        <button type="button" onclick="myCheckActionCount();">change</button>
+
+    	<button type="button" onclick="myRepeat();">restart</button>
+    	
+
+		<div style="position: relative;border: 1px solid #808080;">
+
+			<!-- 3D描画領域のためのdiv要素を配置 -->
+			<div id="canvas3d" style="position:absolute; top:0px; left:0px; width:100%; height:100%; z-index: 1; background-color: #000000;"></div>
+			<!-- その真上に、2D描画領域のためのdiv要素を配置 -->
+			<canvas id="canvas2d" style="position:absolute; top:0px; left:0px; width:100%; height:100%; z-index: 10; background-color:rgba(0,0,0,0);"></canvas>
+
+			
+			<div style="position:absolute; top:0px; left:0px; width:50%; height:80px; z-index: 99; background-color:rgba(80,80,80,0.5);">
+			        myActionCount <label id="myActionCount"></label> : <label id="myMsg"></label>
+			</div>
+		</div>
+
+
+
+		<script src="requierdEDI_dummy.js"></script>
+		<script src="threeJS-Sample06_testMotion.js"></script>
+		
+
+		
+
+	</body>
+</html>
